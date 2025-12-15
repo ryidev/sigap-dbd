@@ -67,9 +67,9 @@ export default function FormGejalaUtama({ formData, setFormData }: FormProps) {
                             <img
                                 src="/schedule.png"
                                 alt="Question"
-                                className="w-16 flex-shrink-0"
+                                className={`w-16 flex-shrink-0 transition-all duration-200 ${formData.KDEMA !== 'Iya' ? 'grayscale opacity-50' : ''}`}
                             />
-                            <label className="flex flex-col flex-1">
+                            <label className={`flex flex-col flex-1 min-h-[88px] transition-all duration-200 ${formData.KDEMA !== 'Iya' ? 'opacity-50' : ''}`}>
                                 <h5 className="mb-2 text-xl font-medium tracking-tight text-gray-900">
                                     Durasi demam (hari)
                                 </h5>
@@ -107,9 +107,9 @@ export default function FormGejalaUtama({ formData, setFormData }: FormProps) {
                             <img
                                 src="/thermometer.png"
                                 alt="Question"
-                                className="w-16 flex-shrink-0"
+                                className={`w-16 flex-shrink-0 transition-all duration-200 ${formData.KDEMA !== 'Iya' ? 'grayscale opacity-50' : ''}`}
                             />
-                            <label className="flex flex-col flex-1">
+                            <label className={`flex flex-col flex-1 min-h-[88px] transition-all duration-200 ${formData.KDEMA !== 'Iya' ? 'opacity-50' : ''}`}>
                                 <h5 className="mb-2 text-xl font-medium tracking-tight text-gray-900">
                                     Suhu saat ini (°C)
                                 </h5>
