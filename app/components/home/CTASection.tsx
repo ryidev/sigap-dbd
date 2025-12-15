@@ -22,7 +22,7 @@ export default function CTASection() {
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link
                             href="/form"
-                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900 shadow-lg shadow-red-900/20 hover:shadow-red-900/40 hover:scale-[1.02] transition-all duration-200"
+                            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-red-700 rounded-lg bg-white border-2 border-white hover:bg-transparent hover:border-white hover:text-white focus:ring-4 focus:ring-red-300 dark:focus:ring-red-900 transition-all duration-200"
                         >
                             <svg
                                 className="mr-2 -ml-1 w-5 h-5"
@@ -44,7 +44,7 @@ export default function CTASection() {
                             href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex gap-x-2 items-center rounded border-2 border-white px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-red-700 focus:outline-none focus:ring-4 focus:ring-white/50 transition-all"
+                            className="flex gap-x-2 items-center rounded-lg border-2 border-white px-8 py-4 text-sm font-medium text-white hover:bg-white hover:text-red-700 focus:outline-none focus:ring-4 focus:ring-white/50 transition-all"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
