@@ -1,0 +1,41 @@
+# 1. Base Image untuk Build
+FROM node:20-alpine AS builder
+WORKDIR /app
+
+# 2. Copy dependency files
+# Kita pakai package-lock.json jika ada, atau hanya package.json
+COPY package.json package-lock.json* ./
+
+# 3. Install dependencies menggunakan NPM (bukan Bun)
+# Karena kamu pindah dari Bun, pastikan folder node_modules lama dihapus dulu di lokal jika mau test lokal
+RUN npm install
+
+# 4. Copy semua source code
+COPY . .
+
+# 5. --- BAGIAN KRUSIAL (ENV VARIABLES) ---
+# Next.js butuh variable ini SAAT BUILD (Build Time) untuk 'membakar' variable NEXT_PUBLIC ke dalam aplikasi.
+# Saya hardcode di sini sesuai request kamu agar build sukses.
+ENV NEXT_PUBLIC_SUPABASE_URL=https://cazwvirzehsvimgdchyu.supabase.co
+ENV NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhend2aXJ6ZWhzdmltZ2RjaHl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0OTk0OTQsImV4cCI6MjA4MTA3NTQ5NH0.QM4ZTO9VM8nrxfoirs-4giWPf-HEUu7HFtTzNCpGO5Q
+ENV NEWSDATA_API_KEY=pub_c5f8e33e12464caa9fc86494ae18755a
+ENV NEXT_PUBLIC_MAPTILER_API_KEY=FA6JDSQtAH4StLAmSKL0
+
+# 6. Build Project
+RUN npm run build
+
+# 7. Production Image (Runner)
+FROM node:20-alpine
+WORKDIR /app
+
+# Set environment ke production
+ENV NODE_ENV=production
+
+# Copy hasil build dari stage 'builder'
+COPY --from=builder /app ./
+
+# Expose port
+EXPOSE 3000
+
+# Start aplikasi
+CMD ["npm", "start"]

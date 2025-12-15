@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Email OTP - SiGap Dengue</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .preview-note {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 15px;
+      color: #856404;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .header {
+      background: #780606;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .content {
+      padding: 40px 30px;
+    }
+    .otp-box {
+      background: #c460602f;
+      border: 2px dashed #780606;
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .otp-code {
+      font-size: 36px;
+      font-weight: bold;
+      color: black;
+      letter-spacing: 8px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+    }
+    .warning {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .footer {
+      background: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #6c757d;
+    }
+    /* .button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    } */
+    img {
+      max-width: 150px;
+      display: flex;
+      margin: 0 auto 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="preview-note">
+    <strong>📧 Preview Email Template</strong><br>
+    Ini adalah preview template email OTP yang akan dikirim ke user.
+    Kode OTP di bawah hanya contoh.
+  </div> -->
+
+  <div class="container">
+    <div class="header">
+      <h1>SiGap Dengue</h1>
+      <p>Verifikasi Akun Anda</p>
+    </div>
+
+    <div class="content">
+      <h2>Halo John Doe!</h2>
+      <p>Terima kasih telah mendaftar di SiGap Dengue. Untuk melanjutkan, silakan verifikasi email Anda dengan kode OTP berikut:</p>
+      <img src="public\dengue.png" alt="">
+
+      <div class="otp-box">
+        <p style="margin: 0; color: #6c757d; font-size: 14px;">Kode Verifikasi OTP Anda:</p>
+        <div class="otp-code">123456</div>
+        <p style="margin: 0; color: #6c757d; font-size: 12px;">Kode berlaku selama 10 menit</p>
+      </div>
+
+      <!-- <div class="warning">
+        <strong>Perhatian:</strong>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+          <li>Jangan bagikan kode ini kepada siapapun</li>
+          <li>Kode hanya berlaku untuk 1x penggunaan</li>
+          <li>Kode akan kedaluwarsa dalam 10 menit</li>
+        </ul>
+      </div> -->
+
+      <p>Jika Anda tidak melakukan pendaftaran ini, abaikan email ini atau hubungi tim support kami.</p>
+
+      <p style="margin-top: 30px;">
+        Salam sehat,<br>
+        <strong>Tim CH SiGap Dengue</strong>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>Email ini dikirim secara otomatis, mohon tidak membalas email ini.</p>
+      <p>&copy; 2025 SiGap Dengue. All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- <div class="preview-note" style="margin-top: 20px;">
+    <strong>📝 Catatan:</strong><br>
+    • Email akan di-generate oleh <code>lib/email-service.ts</code><br>
+    • OTP akan berisi 6 digit angka random<br>
+    • Template bisa di-customize sesuai kebutuhan<br>
+    • Support dark mode dan mobile responsive
+  </div> -->
+</body>
+</html>

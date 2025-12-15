@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+    --color-red-50: #fff5f5;
+    --color-red-100: #ffe3e3;
+    --color-red-200: #ffc9c9;
+    --color-red-300: #ffa5a5;
+    --color-red-400: #fe7171;
+    --color-red-500: #f63e3e;
+    --color-red-600: #d71313;
+    --color-red-700: #780606;
+    /* Base Blood Red */
+    --color-red-800: #5a0404;
+    --color-red-900: #420303;
+    --color-red-950: #2b0202;
+}
+
+* {
+    scroll-behavior: smooth;
+    scroll-margin-top: 50px;
+}
+
+h1,
+h2 {
+    font-weight: 900 !important;
+}
+
+.lucide-icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Custom animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
